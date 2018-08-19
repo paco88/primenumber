@@ -1,0 +1,15 @@
+#!/bin/bash
+
+print_usage() {
+	echo "run {server|client [num_threads]}"
+}
+
+if [ "$#" -eq "0" ]; then
+	print_usage
+elif [ "$1" == "server" ]; then
+	java -cp . Randomizer
+elif [ "$1" == "client" ]; then
+	java -cp . Prime $2
+else
+	print_usage
+fi
